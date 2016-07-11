@@ -3,6 +3,7 @@
 namespace Game\Units;
 
 use Game\Map\Tile;
+use Game\Units\CanMove;
 
 class Unit {
     
@@ -35,6 +36,11 @@ class Unit {
     public function tile()
     {
         return $this->tile;
+    }
+
+    public function move(Tile $tile)
+    {
+        // 
     }
 
 
