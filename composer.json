@@ -1,0 +1,15 @@
+{
+    "name": "kubek/4xgame",
+    "authors": [
+        {
+            "name": "Jakub Ciolek",
+            "email": "jakub.c@devpark.pl"
+        }
+    ],
+    "require": {
+        "psy/psysh": "@stable"
+    },
+    "autoload": {
+        "psr-4": {"Game\\": "src/"}
+    }
+}
