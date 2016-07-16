@@ -7,6 +7,19 @@ class Resource {
     protected $name;
     protected $resourceBank;
 
+    function __construct()
+    {
+        $this->createResourceBank();
+    }
+
+    protected function createResourceBank()
+    {
+        if($this->resourceBank == null)
+        {
+            $this->resourceBank = new ResourceBank;
+        }
+    }
+
     public function getResourceBank()
     {
         return $this->resourceBank;
