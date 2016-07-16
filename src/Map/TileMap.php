@@ -39,7 +39,7 @@ class TileMap {
 
     public function getTileIndex($x, $y)
     {
-          for(var $i = 0;$i<count($this->tiles);$i++)
+          for($i = 0;$i<count($this->tiles);$i++)
         {
             if($this->tiles[$i]->x == $x && $this->tiles[$i]->y == $y)
             {
