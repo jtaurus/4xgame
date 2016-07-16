@@ -29,4 +29,9 @@ class ResourceBank {
 
         return false;
     }
+
+    public function amount()
+    {
+        return $this->amount;
+    }
 }
