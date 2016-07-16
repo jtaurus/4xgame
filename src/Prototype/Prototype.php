@@ -35,6 +35,13 @@ class Prototype {
         $this->initResources();
     }
 
+    public function turn()
+    {
+        $this->engine->endTurn();
+
+        return $this;
+    }
+
     protected function initEngine()
     {
         $this->engine = new Engine();
