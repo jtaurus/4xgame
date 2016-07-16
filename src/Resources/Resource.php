@@ -30,6 +30,11 @@ class Resource {
         self::$resourceBank = $resourceBank;
     }
 
+    public function amount()
+    {
+        return self::$resourceBank->amount();
+    }
+
     public function gain($amount)
     {
         return self::$resourceBank->increment($amount);
