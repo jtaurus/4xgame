@@ -4,6 +4,7 @@ namespace Game\Prototype;
 
 use Game\Engine\Engine;
 use Game\Map\TileMap;
+use Game\Map\TileMapGenerator;
 use Game\Resources\Gold;
 
 class Prototype {
@@ -49,7 +50,7 @@ class Prototype {
 
     protected function initTileMap()
     {
-        $this->tileMap = new TileMap();
+        $this->tileMap = TileMapGenerator::generate(16, 16);
     }
 
     protected function initResources()
