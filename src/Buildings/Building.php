@@ -28,6 +28,11 @@ class Building implements ActsOnTurn{
      */
     protected $productAmount = 1;
 
+    public function setTile(Tile $tile)
+    {
+        $this->tile = $tile;
+    }
+
     public function processTurn()
     {
         $this->produce();
@@ -41,6 +46,17 @@ class Building implements ActsOnTurn{
         $this->product->generateFromBuilding($this->productAmount);
 
         return $this;
+    }
+
+    /*
+        @return Game\Buildings\Building
+     */
+    public static function build(Tile $tile)
+    {
+        $instance = new static;
+        $instance->setTile($tile);
+
+        return $instance;
     }
 
 
