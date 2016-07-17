@@ -2,32 +2,44 @@
 
 namespace Game\Map;
 
-use Game\Map\PositionContract;
-
 class Tile {
 
     /*
         @var String
      */
     protected $name;
+
     /*
-        @var PositionContract
+        @var integer - X position
      */
-    protected $position;
+    protected $x;
+
+    /*
+        @var integer - Y position
+     */
+    protected $y;
 
     /*
         @var array
      */
     protected $units;
 
-    public function getPosition()
+    public function x()
     {
-        return $this->position;
+        return $this->x;
     }
 
-    public function setPosition(PositionContract $position)
+    public function y()
     {
-        $this->position = $position;
+        return $this->y;
+    }
+
+    public function setPosition($x, $y)
+    {
+        $this->x = $x;
+        $this->y = $y;
+
+        return $this;
     }
 
     public function getName()
@@ -38,7 +50,8 @@ class Tile {
     public function setName($name)
     {
         $this->name = $name;
-        return $this->name;
+
+        return $this;
     }
 
     public function addUnit(Unit $unit)
