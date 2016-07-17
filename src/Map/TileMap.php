@@ -20,33 +20,15 @@ class TileMap {
 
     public function getTile($x, $y)
     {
-        if($this->getTileIndex($x, $y))
-        {
-           return $this->tiles[$this->getTileIndex($x, $y)]; 
-        }
-        
-        return false;
+        return $this->tiles[$x][$y];
     }
 
     public function setTile($x, $y, Tile $tile)
     {
-        if($this->getTileIndex($x, $y))
-        {
-            $this->tiles[$this->getTileIndex($x, $y)] = $tile;
-        }
-        return false;
+        $tile->setPosition($x, $y);
+        $this->tiles[$x][$y] = $tile;
+
+        return $this;
     }
 
-    public function getTileIndex($x, $y)
-    {
-          for($i = 0;$i<count($this->tiles);$i++)
-        {
-            if($this->tiles[$i]->x == $x && $this->tiles[$i]->y == $y)
-            {
-                return $i;
-            }
-        }
-        
-        return false;      
-    }
 }

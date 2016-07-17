@@ -16,6 +16,26 @@ class TileMapGenerator {
      */
     public static function generate($x, $y)
     {
+        $tileMap = new TileMap;
 
+        for($a = 0; $a < $x; $a++)
+        {
+            for($b = 0; $b < $y; $b++)
+            {
+                $tile = TileMapGenerator::generateRandomTile();
+                $tileMap->setTile($a, $b, $tile);
+            }
+        }
+
+        return $tileMap;
+    }
+
+    /**
+     * Generates a random tile
+     * @return Game\Map\Tile [description]
+     */
+    public static function generateRandomTile()
+    {
+        return new Tile;
     }
 }
