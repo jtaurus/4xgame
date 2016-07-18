@@ -6,6 +6,8 @@ use Game\Map\Tile;
 use Game\Map\TileMap;
 use Game\Map\ResourceTile;
 use Game\Resources\Gold;
+use Game\Engine\Engine;
+use Game\Engine\ActsOnTurn;
 
 class TileMapGenerator {
     
@@ -31,6 +33,24 @@ class TileMapGenerator {
         return $tileMap;
     }
 
+    public static function registerResourceTiles(Engine $engine, TileMap $tileMap)
+    {
+
+        $tiles = $tileMap->getTiles();
+
+        for($x = 0; $x<count($tiles); $x++)
+        {
+            $row = $tiles[$x];
+            for($y = 0; $y<count($row); $y++)
+            {
+                if($row[$y] instanceof ActsOnTurn)
+                {
+                    $engine->addEntity($row[$y]);
+                }
+            }
+        }
+    }
+
     /**
      * Generates a random tile
      * @return Game\Map\Tile [description]
@@ -44,7 +64,7 @@ class TileMapGenerator {
             $resource = new Gold;
             return new ResourceTile($resource);
         }
-        
+
         return new Tile;
     }
 }

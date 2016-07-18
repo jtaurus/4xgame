@@ -9,7 +9,7 @@ class Engine {
     /*
         Array of entities changing with time ( on new turns )
      */
-    protected $entities;
+    public $entities;
 
     public function addEntity(ActsOnTurn $entity)
     {

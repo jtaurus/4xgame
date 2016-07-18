@@ -51,6 +51,7 @@ class Prototype {
     protected function initTileMap()
     {
         $this->tileMap = TileMapGenerator::generate(16, 16);
+        TileMapGenerator::registerResourceTiles($this->engine, $this->tileMap);
     }
 
     protected function initResources()

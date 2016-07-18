@@ -4,8 +4,9 @@ namespace Game\Map;
 
 use Game\Map\Tile;
 use Game\Resources\Resource;
+use Game\Engine\ActsOnTurn;
 
-class ResourceTile extends Tile {
+class ResourceTile extends Tile implements ActsOnTurn {
     
     /*
         @var Game\Resources\Resource
@@ -15,7 +16,7 @@ class ResourceTile extends Tile {
     /*
         @var integer
      */
-    protected $generatedAmount;
+    protected $generatedAmount = 1;
 
     function __construct(Resource $resource)
     {
@@ -25,5 +26,10 @@ class ResourceTile extends Tile {
     public function generate()
     {
         $this->resource->gain($this->generatedAmount);
+    }
+
+    public function processTurn()
+    {
+        $this->generate();
     }
 }
