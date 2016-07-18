@@ -6,6 +6,7 @@ use Game\Engine\Engine;
 use Game\Map\TileMap;
 use Game\Map\TileMapGenerator;
 use Game\Resources\Gold;
+use Game\Resources\Population;
 
 class Prototype {
     
@@ -57,5 +58,6 @@ class Prototype {
     protected function initResources()
     {
         $this->resources[] = new Gold();
+        $this->resources[] = new Population();
     }
 }

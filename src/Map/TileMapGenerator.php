@@ -6,6 +6,7 @@ use Game\Map\Tile;
 use Game\Map\TileMap;
 use Game\Map\ResourceTile;
 use Game\Resources\Gold;
+use Game\Resources\Population;
 use Game\Engine\Engine;
 use Game\Engine\ActsOnTurn;
 
@@ -59,9 +60,14 @@ class TileMapGenerator {
     {
         $random = rand(0,10);
 
-        if($random < 2)
+        if($random < 1)
         {
             $resource = new Gold;
+            return new ResourceTile($resource);
+        }
+        if($random > 1 && $random < 4)
+        {
+            $resource = new Population;
             return new ResourceTile($resource);
         }
 
