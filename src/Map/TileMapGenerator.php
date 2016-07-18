@@ -37,7 +37,7 @@ class TileMapGenerator {
      */
     public static function generateRandomTile()
     {
-        $random = random(0,10);
+        $random = rand(0,10);
 
         if($random < 2)
         {
