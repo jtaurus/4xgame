@@ -5,6 +5,7 @@ namespace Game\Map;
 use Game\Map\Tile;
 use Game\Map\TileMap;
 use Game\Map\ResourceTile;
+use Game\Resources\Gold;
 
 class TileMapGenerator {
     
@@ -36,6 +37,14 @@ class TileMapGenerator {
      */
     public static function generateRandomTile()
     {
+        $random = random(0,10);
+
+        if($random < 2)
+        {
+            $resource = new Gold;
+            return new ResourceTile($resource);
+        }
+        
         return new Tile;
     }
 }

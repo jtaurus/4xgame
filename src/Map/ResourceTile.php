@@ -17,6 +17,11 @@ class ResourceTile extends Tile {
      */
     protected $generatedAmount;
 
+    function __construct(Resource $resource)
+    {
+        $this->resource = $resource;
+    }
+
     public function generate()
     {
         $this->resource->gain($this->generatedAmount);
