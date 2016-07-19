@@ -62,12 +62,12 @@ class TileMapGenerator {
 
         if($random < 1)
         {
-            $resource = new Gold;
+            $resource = Gold::instance();
             return new ResourceTile($resource);
         }
         if($random > 1 && $random < 4)
         {
-            $resource = new Population;
+            $resource = Population::instance();
             return new ResourceTile($resource);
         }
 

@@ -57,7 +57,7 @@ class Prototype {
 
     protected function initResources()
     {
-        $this->resources[] = new Gold();
-        $this->resources[] = new Population();
+        $this->resources[] = Gold::instance();
+        $this->resources[] = Population::instance();
     }
 }

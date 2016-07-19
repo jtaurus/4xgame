@@ -5,7 +5,7 @@ namespace Game\Resources;
 class Resource {
     
     protected $name;
-    public static $resourceBank;
+    public $resourceBank;
 
     function __construct()
     {
@@ -14,35 +14,35 @@ class Resource {
 
     protected function createResourceBank()
     {
-        if(self::$resourceBank == null)
+        if($this->resourceBank == null)
         {
-            self::$resourceBank = new ResourceBank;
+            $this->resourceBank = new ResourceBank;
         }
     }
 
     public function getResourceBank()
     {
-        return self::$resourceBank;
+        return $this->resourceBank;
     }
 
     public function setResourceBank(ResourceBank $resourceBank)
     {
-        self::$resourceBank = $resourceBank;
+        $this->resourceBank = $resourceBank;
     }
 
     public function amount()
     {
-        return self::$resourceBank->amount();
+        return $this->resourceBank->amount();
     }
 
     public function gain($amount)
     {
-        return self::$resourceBank->increment($amount);
+        return $this->resourceBank->increment($amount);
     }
 
     public function spend($amount)
     {
-        return self::$resourceBank->decrement($amount);
+        return $this->resourceBank->decrement($amount);
     }
 
     public function getName()
@@ -53,6 +53,7 @@ class Resource {
     public function setName($name)
     {
         $this->name = $name;
+
         return $this->name;
     }
 }
