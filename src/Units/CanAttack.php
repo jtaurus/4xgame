@@ -1,5 +1,7 @@
 <?php
 
+namespace Game\Units;
+
 use Game\Units\Attackable;
 
 interface CanAttack {
