@@ -30,6 +30,7 @@ class Unit {
     public function occupy(Tile $tile)
     {
         $this->tile = $tile;
+        $this->tile->addUnit($this);
         return $this->tile;
     }
 

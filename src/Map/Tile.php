@@ -2,6 +2,8 @@
 
 namespace Game\Map;
 
+use Game\Units\Unit;
+
 class Tile {
 
     /*
@@ -22,7 +24,7 @@ class Tile {
     /*
         @var array
      */
-    protected $units;
+    protected $units = [];
 
     public function x()
     {
@@ -56,7 +58,7 @@ class Tile {
 
     public function addUnit(Unit $unit)
     {
-        echo "Add unit";
+        $this->units[] = $unit;
     }
 
     public function removeUnit(Unit $unit)
