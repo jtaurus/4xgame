@@ -7,6 +7,7 @@ use Game\Map\TileMap;
 use Game\Map\TileMapGenerator;
 use Game\Resources\Gold;
 use Game\Resources\Population;
+use Game\Units\UnitManager;
 
 class Prototype {
     
@@ -24,17 +25,18 @@ class Prototype {
         @var [] Game\Resources\Resource
      */
     public $resources;
-
+    
     /*
-        @var [] Game\Units\Unit
+        @var Game\Units\UnitManager
      */
-    public $units;
+    public $unitManager;
 
     function __construct()
     {
         $this->initEngine();
         $this->initTileMap();
         $this->initResources();
+        $this->initUnitManager();
     }
 
     public function turn()
@@ -59,5 +61,10 @@ class Prototype {
     {
         $this->resources[] = Gold::instance();
         $this->resources[] = Population::instance();
+    }
+
+    protected function initUnitManager()
+    {
+        $this->unitManager = new UnitManager($this->engine, $this->tileMap);
     }
 }
