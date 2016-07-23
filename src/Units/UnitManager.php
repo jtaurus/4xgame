@@ -37,15 +37,21 @@ class UnitManager {
     {
         $tile->addUnit($unit);
         $this->addUnit($unit);
+
+        return $this;
     }
 
     public function addUnit(Unit $unit)
     {
         $this->units[] = $unit;
+
+        return $this;
     }
 
     public function getUnits()
     {
         return $this->units;
+
+        return $this;
     }
 }
