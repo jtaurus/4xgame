@@ -11,12 +11,12 @@ class FightingUnit extends Unit implements Attackable, CanAttack{
     /*
         @var integer
      */
-    protected $attack;
+    public $attack;
 
     /*
         @var integer
      */
-    protected $hp;
+    public $hp;
 
     public function getAttack()
     {

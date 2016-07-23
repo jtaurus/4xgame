@@ -35,7 +35,7 @@ class UnitManager {
 
     public function spawnUnit(Tile $tile, Unit $unit)
     {
-        $tile->addUnit($unit);
+        $unit->occupy($tile);
         $this->addUnit($unit);
 
         return $this;

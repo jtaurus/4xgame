@@ -10,12 +10,12 @@ class Unit {
     /*
         @var Game\Map\Tile
      */
-    protected $tile;
+    public $tile;
 
     /*
         @var String
      */
-    protected $name;
+    public $name;
 
     public function getName()
     {
@@ -31,7 +31,8 @@ class Unit {
     {
         $this->tile = $tile;
         $this->tile->addUnit($this);
-        return $this->tile;
+        
+        return $this;
     }
 
     public function tile()
